@@ -1,25 +1,72 @@
 package com.example.DTO;
 
-public class RecruiterDTO {
-	
-	public Long id;
-	public String name;
-	public String email;
-	public String phone;
-	public String companyName;
-	public String companyDescription;
-	public String companyWebsite;
-	
-	public RecruiterDTO(Long id,String name,String email,String phone,String companyName,String companyDescription,String companyWebsite) {
-		this.id=id;
-		this.name=name;
-		this.email=name;
-		this.phone=phone;
-		this.companyName=companyName;
-		this.companyDescription=companyDescription;
-		this.companyWebsite=companyWebsite;
-		
-	}
-	
+import com.example.entity.User;
+import com.example.enums.Designation;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+public class RecruiterDTO {
+    public Long id;
+    public String name;
+    public String email;
+    public String phone;
+    public String companyName;
+    public String companyDescription;
+    public String companyWebsite;
+    public String companyAddress;
+    public String companySize;
+    public Designation designation;
+    @JsonIgnore
+    public User user;
+
+    // ✅ Full constructor
+    public RecruiterDTO(Long id, String name, String email, String phone,
+                        String companyName, String companyDescription,
+                        String companyWebsite, String companyAddress, String companySize,
+                        Designation designation, User user) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.companyName = companyName;
+        this.companyDescription = companyDescription;
+        this.companyWebsite = companyWebsite;
+        this.companyAddress = companyAddress;
+        this.companySize = companySize;
+        this.designation = designation;
+        this.user = user;
+    }
+
+    // Getters & Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getCompanyName() { return companyName; }
+    public void setCompanyName(String companyName) { this.companyName = companyName; }
+
+    public String getCompanyDescription() { return companyDescription; }
+    public void setCompanyDescription(String companyDescription) { this.companyDescription = companyDescription; }
+
+    public String getCompanyWebsite() { return companyWebsite; }
+    public void setCompanyWebsite(String companyWebsite) { this.companyWebsite = companyWebsite; }
+
+    public String getCompanyAddress() { return companyAddress; }
+    public void setCompanyAddress(String companyAddress) { this.companyAddress = companyAddress; }
+
+    public String getCompanySize() { return companySize; }
+    public void setCompanySize(String companySize) { this.companySize = companySize; }
+
+    public Designation getDesignation() { return designation; }
+    public void setDesignation(Designation designation) { this.designation = designation; }
+
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 }

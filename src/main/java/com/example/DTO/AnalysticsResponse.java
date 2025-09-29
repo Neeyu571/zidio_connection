@@ -32,6 +32,96 @@ public class AnalysticsResponse {
 		this.totalUserPayment = totalUserPayment;
 	}
 
+	public Long getTotalAuth() {
+		return totalAuth;
+	}
+
+	public void setTotalAuth(Long totalAuth) {
+		this.totalAuth = totalAuth;
+	}
+
+	public Long getTotalStudents() {
+		return totalStudents;
+	}
+
+	public void setTotalStudents(Long totalStudents) {
+		this.totalStudents = totalStudents;
+	}
+
+	public Long getTotalRecruiters() {
+		return totalRecruiters;
+	}
+
+	public void setTotalRecruiters(Long totalRecruiters) {
+		this.totalRecruiters = totalRecruiters;
+	}
+
+	public Long getTotalJobPosts() {
+		return totalJobPosts;
+	}
+
+	public void setTotalJobPosts(Long totalJobPosts) {
+		this.totalJobPosts = totalJobPosts;
+	}
+
+	public Long getTotalApplications() {
+		return totalApplications;
+	}
+
+	public void setTotalApplications(Long totalApplications) {
+		this.totalApplications = totalApplications;
+	}
+
+	public Long getTotalAdmins() {
+		return totalAdmins;
+	}
+
+	public void setTotalAdmins(Long totalAdmins) {
+		this.totalAdmins = totalAdmins;
+	}
+
+	public Long getTotalFileUpload() {
+		return totalFileUpload;
+	}
+
+	public void setTotalFileUpload(Long totalFileUpload) {
+		this.totalFileUpload = totalFileUpload;
+	}
+
+	public Long getTotalEmails() {
+		return totalEmails;
+	}
+
+	public void setTotalEmails(Long totalEmails) {
+		this.totalEmails = totalEmails;
+	}
+
+	public Long getTotalSubscriptionPlan() {
+		return totalSubscriptionPlan;
+	}
+
+	public void setTotalSubscriptionPlan(Long totalSubscriptionPlan) {
+		this.totalSubscriptionPlan = totalSubscriptionPlan;
+	}
+
+	public Long getTotalPayment() {
+		return totalPayment;
+	}
+
+	public void setTotalPayment(Long totalPayment) {
+		this.totalPayment = totalPayment;
+	}
+
+	public Long getTotalUserPayment() {
+		return totalUserPayment;
+	}
+
+	public void setTotalUserPayment(Long totalUserPayment) {
+		this.totalUserPayment = totalUserPayment;
+	}
+	
+	
+
 
 	
 

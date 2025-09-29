@@ -1,35 +1,52 @@
 package com.example.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.DTO.StudentDTO;
-import com.example.service.StuudentService;
+import com.example.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/students")
 public class StudentController {
-	
-	@Autowired
-	private StuudentService studentService;
-	
-	@GetMapping("/email/{email}")
-	public ResponseEntity<StudentDTO>getStudentByEmail(@PathVariable String email){
-		return ResponseEntity.ok(studentService.getStudentByEmail(email));
-	}
-	@GetMapping("/id/{id}")
-	public ResponseEntity<StudentDTO>getStudentById( @PathVariable Long id ){
-		return ResponseEntity.ok(studentService.getStudentById(id));
-	}
-	@PostMapping
-	public ResponseEntity<StudentDTO>createOrUpdateStudent(@RequestBody StudentDTO dto){
-		return ResponseEntity.ok(studentService.createOrUpdateStudent(dto));
-	}
 
+    @Autowired
+    private StudentService studentService;
+
+    // Create Student
+    @PostMapping
+    public StudentDTO createStudent(@RequestBody StudentDTO dto) {
+        return studentService.createStudent(dto);
+    }
+
+    // Get Student by ID
+    @GetMapping("/{id}")
+    public StudentDTO getStudentById(@PathVariable Long id) {
+        return studentService.getStudentById(id);
+    }
+
+    // Get Student by Email
+    @GetMapping("/email/{email}")
+    public StudentDTO getStudentByEmail(@PathVariable String email) {
+        return studentService.getStudentByEmail(email);
+    }
+
+    // Get All Students
+    @GetMapping
+    public List<StudentDTO> getAllStudents() {
+        return studentService.getAllStudents();
+    }
+
+    // Update Student
+    @PutMapping("/{id}")
+    public StudentDTO updateStudent(@PathVariable Long id, @RequestBody StudentDTO dto) {
+        return studentService.updateStudent(id, dto);
+    }
+
+    // Delete Student
+    @DeleteMapping("/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+    }
 }

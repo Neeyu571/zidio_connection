@@ -1,7 +1,7 @@
 package com.example.entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "password_reset_tokens")
@@ -11,32 +11,56 @@ public class PasswordResetToken {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String token;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
-    private User user;
+    @Column(nullable = false)
+    private String email;
 
-    private LocalDateTime expiryDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "expiry_date", nullable = false)
+    private Date expiryDate;
 
-    // Constructors
     public PasswordResetToken() {}
 
-    public PasswordResetToken(String token, User user, LocalDateTime expiryDate) {
+    public PasswordResetToken(String token, String email, Date expiryDate) {
         this.token = token;
-        this.user = user;
+        this.email = email;
         this.expiryDate = expiryDate;
     }
 
-    // Getters & Setters
-    public Long getId() { return id; }
+	public Long getId() {
+		return id;
+	}
 
-    public String getToken() { return token; }
-    public void setToken(String token) { this.token = token; }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
+	public String getToken() {
+		return token;
+	}
 
-    public LocalDateTime getExpiryDate() { return expiryDate; }
-    public void setExpiryDate(LocalDateTime expiryDate) { this.expiryDate = expiryDate; }
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(Date expiryDate) {
+		this.expiryDate = expiryDate;
+	}
+    
+
+  
 }

@@ -2,7 +2,7 @@ package com.example.enums;
 
 public enum Role {
 	
-	STUDENT,RECRUITER,ADMIN;
+	STUDENT,RECRUITER,ADMIN,USER;
 	
 
 }

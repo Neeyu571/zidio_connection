@@ -23,7 +23,7 @@ public class RecruiterController {
 	public ResponseEntity <RecruiterDTO> register(@RequestBody RecruiterDTO dto) {
 		return ResponseEntity.ok(recruiterService.createRecruiter(dto));
 	}
-	@GetMapping("/{email}")
+	@GetMapping("/email/{email}")
 	public ResponseEntity<RecruiterDTO>getByEmail(@PathVariable String email){
 		return ResponseEntity.ok(recruiterService.getRecruiterByEmail(email));
 	}
